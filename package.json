@@ -1,0 +1,16 @@
+{
+  "name": "simple-case-converter",
+  "version": "1.0.0",
+  "description": "String Case Converter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "case",
+    "string",
+    "converter"
+  ],
+  "author": "Wahyu Saefulloh",
+  "license": "ISC"
+}
