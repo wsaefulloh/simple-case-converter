@@ -6,6 +6,8 @@ Npm Package for convert string to sentence case or capitalize each word.
 ```javascript
 const simpleCaseConverter = require('simple-case-converter');
 
-console.log(simpleCaseConverter.sentenceCase('Hello world'));
-console.log(simpleCaseConverter.capitalizeEachWord('Hello world'));
+console.log(simpleCaseConverter.sentenceCase('hello world'));
+// Result : 'Hello world.'
+console.log(simpleCaseConverter.capitalizeEachWord('hello world'));
+// Result : 'Hello World.'
 ```
