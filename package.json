@@ -1,6 +1,6 @@
 {
   "name": "simple-case-converter",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "A lightweight utility for converting strings to sentence case or capitalized word format.",
   "main": "index.js",
   "files": [
