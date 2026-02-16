@@ -1,53 +1,54 @@
-let simpleCaseConverter = {}
+'use strict';
 
-simpleCaseConverter.sentenceCase = (e) => {
-    if (typeof (e) == "string") {
-        let newCase = ''
-        for (let i = 0; i < e.length; i++) {
-            if (i == 0) {
-                newCase = newCase + e[i].toUpperCase()
-            } else if (i == e.length - 1) {
-                if (e[i] != '.') {
-                    newCase = newCase + e[i] + '.'
-                }
-            } else {
-                newCase = newCase + e[i]
-            }
-        }
-        return newCase
-    } else {
-        return new Error('Parameter must be in string')
+function assertString(input) {
+    if (typeof input !== 'string') {
+        throw new TypeError('Parameter must be a string');
     }
 }
 
-simpleCaseConverter.capitalizeEachWord = (e) => {
-    if (typeof (e) == "string") {
-        let newCase = ''
-        let eachWord = e.split(" ")
-        for (let i = 0; i < eachWord.length; i++) {
-            let capitalize = ""
-            if (i != 0) {
-                capitalize = " "
-            }
-            let someCase = eachWord[i];
-            for (let n = 0; n < someCase.length; n++) {
-                if (n == 0) {
-                    capitalize = capitalize + someCase[n].toUpperCase()
-                } else {
-                    capitalize = capitalize + someCase[n]
-                }
-            }
-            newCase = newCase + capitalize
-        }
-
-        if (newCase[newCase.length - 1] != '.') {
-            newCase = newCase + '.'
-        }
-
-        return newCase
-    } else {
-        return new Error('Parameter must be in string')
-    }
+function ensurePeriod(text) {
+    return text.endsWith('.') ? text : text + '.';
 }
 
-module.exports = simpleCaseConverter
+function applyOptions(text, { period = false } = {}) {
+    return period ? ensurePeriod(text) : text;
+}
+
+function capitalizeFirstChar(text) {
+    if (!text) return text;
+
+    return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+function sentenceCase(text, options = {}) {
+    assertString(text);
+
+    const trimmed = text.trim();
+    if (!trimmed) return trimmed;
+
+    const formatted = capitalizeFirstChar(trimmed);
+
+    return applyOptions(formatted, options);
+}
+
+function capitalizeEachWord(text, options = {}) {
+    assertString(text);
+
+    const trimmed = text.trim();
+    if (!trimmed) return trimmed;
+
+    const formatted = trimmed
+        .split(/\s+/)
+        .map(capitalizeFirstChar)
+        .join(' ');
+
+    return applyOptions(formatted, options);
+}
+
+
+const simpleCaseConverter = {
+    sentenceCase,
+    capitalizeEachWord
+};
+
+module.exports = simpleCaseConverter;

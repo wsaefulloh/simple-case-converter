@@ -1,16 +1,34 @@
 {
   "name": "simple-case-converter",
   "version": "1.0.4",
-  "description": "String Case Converter",
+  "description": "A lightweight utility for converting strings to sentence case or capitalized word format.",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "keywords": [
-    "case",
     "string",
-    "converter"
+    "case",
+    "sentence-case",
+    "capitalize",
+    "text-formatting",
+    "utility",
+    "zero-dependencies"
   ],
   "author": "Wahyu Saefulloh",
-  "license": "ISC"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wsaefulloh/simple-case-converter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wsaefulloh/simple-case-converter/issues"
+  },
+  "homepage": "https://github.com/wsaefulloh/simple-case-converter#readme",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
 }
