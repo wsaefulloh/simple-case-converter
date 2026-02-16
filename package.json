@@ -1,6 +1,6 @@
 {
   "name": "simple-case-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "String Case Converter",
   "main": "index.js",
   "scripts": {
