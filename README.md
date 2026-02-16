@@ -1,5 +1,5 @@
 ## Simple Case Converter 
-"simple-case-converter" is an npm package that provides functions for easily changing the case of text. developers can quickly and efficiently manage text casing formats according to the needs of their projects.
+"simple-case-converter" is an npm package that provides functions for easily changing the case of text. Developers can quickly and efficiently manage text casing formats according to the needs of their projects.
 
 ## How To Use
 
